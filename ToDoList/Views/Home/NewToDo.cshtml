@@ -1,0 +1,55 @@
+﻿@model ToDo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create new ToDo</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+            <h4>Create New To Do</h4>
+        </div>
+        <div class="panel-body">
+            <form asp-action="NewToDo" method="post">
+                @* This div is where the error message (from the model) will be printed in the view. *@
+                <div asp-validation-summary="All"></div>
+                <p>
+                    <label asp-for="Title">Title:</label>
+                    <input asp-for="Title" />
+                </p>
+                <p>
+                    <label asp-for="Description">Description:</label>
+                    <input asp-for="Description" />
+                </p>
+                <p>
+                    <label asp-for="Priority">Priority:</label>
+                    <input asp-for="Priority" />
+                </p>
+                <p>
+                    <label asp-for="Done">Done:</label>
+                    <input asp-for="Done" />
+                </p>
+                <p>
+                    <label asp-for="DueDate">Due date:</label>
+                    <input asp-for="DueDate" />
+                </p>
+                <button class="btn btn-success" type="submit">Create To Do</button>
+            </form>
+        </div>
+    </div>
+
+
+   
+
+</body>
+</html>

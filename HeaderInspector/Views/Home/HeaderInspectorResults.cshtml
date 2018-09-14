@@ -1,0 +1,57 @@
+﻿@model Inspector
+
+@{
+    ViewData["Title"] = "Header Inspector Results";
+}
+
+<i>I'm in the HeaderInspectorResults.cshtml view</i>
+<br /><br />
+
+<partial name="FormPartialView" />
+
+
+
+
+
+
+<br /><br />
+@foreach (var item in ViewBag.TestList)
+{
+    <p>@item</p>
+}
+@* Why does it always print the last Response Header "Expire"???? *@
+<br /><br />
+<p>@ViewBag.ToPrint</p>
+
+
+
+
+
+
+<br /><br />
+<br /><br />
+<p>You have posted a request with Url: @Model.Url and the following excluded header: @Model.ExcludedHeaders</p>
+
+<h2>ResponseHeadersTest</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            @foreach (var key in ViewBag.headKeys)
+            {
+                <th>@key</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var val in ViewBag.headValues)
+            {
+                <td>@val</td>
+            }
+        </tr>
+    </tbody>
+</table>
+
+
+<br /><br />

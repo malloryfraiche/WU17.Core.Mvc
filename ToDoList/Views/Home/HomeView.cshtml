@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomeView</title>
+</head>
+<body>
+
+    <div>
+        Avancerad webbutveckling <br />
+        This text is comming from the View, not from the Controller! <br />
+        <strong>@ViewBag.Message</strong><br />
+        <i>@ViewBag.Person.FirstName @ViewBag.Person.LastName is @ViewBag.Person.Age years old.</i><br /><br />
+
+        @*
+            The clickable action link to direct us to home/newtodo in the url.
+            The name of the asp-action needs to be the same as the method we want to use in the HomeController.
+        *@
+        <a asp-action="NewToDo">Create a new ToDo </a>
+    </div>
+
+</body>
+</html>

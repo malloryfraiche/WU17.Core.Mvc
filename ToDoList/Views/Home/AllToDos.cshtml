@@ -1,0 +1,44 @@
+﻿@* This is an IEnumerable because it is a collection of many ToDos *@
+@model IEnumerable<ToDo>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List of ToDos</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Priority</th>
+                <th>Done</th>
+                <th>Due date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var todo in Model)
+            {
+                <tr>
+                    <td>@todo.Title</td>
+                    <td>@todo.Description</td>
+                    <td>@todo.Priority</td>
+                    <td>@todo.Done</td>
+                    @* Need to have .Value.ToString() if you have ? in the DateTime in the model... *@
+                    <td>@todo.DueDate.Value.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

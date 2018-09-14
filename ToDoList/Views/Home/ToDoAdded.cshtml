@@ -1,0 +1,21 @@
+﻿@model ToDo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ToDo added!</title>
+</head>
+<body>
+
+    <h1>@Model.Title added!</h1>
+    <p>Due date is: @Model.DueDate and its priority is: @Model.Priority .</p>
+    <a asp-action="AllToDos">See a list of all my ToDos</a>
+
+</body>
+</html>
