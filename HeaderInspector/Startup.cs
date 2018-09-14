@@ -26,6 +26,9 @@ namespace HeaderInspector
                 app.UseDeveloperExceptionPage();
             }
 
+            // To get access to the wwwroot files...
+            app.UseStaticFiles();
+
             app.UseMvcWithDefaultRoute();
 
             app.UseMvc(routes =>
