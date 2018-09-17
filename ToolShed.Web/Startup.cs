@@ -46,6 +46,7 @@ namespace ToolShed.Web
                 app.UseStatusCodePages();
             }
 
+            // To get access to the wwwroot files...
             app.UseStaticFiles();
 
             app.UseMvc(routes =>

@@ -8,4 +8,11 @@
         <span>@($"Pris: {p.Price:C2}")</span>
     </div>
 }
-<div page-model="@Model.Pager" page-action="List"></div>
+<div page-model="@Model.Pager"
+    page-action="List" 
+    enable-page-classes="true"
+    page-class="btn"
+    page-class-normal="btn-default"
+    page-class-selected="btn-primary"
+    class="btn-group">
+</div>
