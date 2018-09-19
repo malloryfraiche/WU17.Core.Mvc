@@ -10,5 +10,7 @@ namespace ToolShed.Web.ViewModels
     {
         public IEnumerable<Product> Products { get; set; }
         public PagingInfo Pager { get; set; }
+        public string SelectedCategory { get; set; }
+ 
     }
 }

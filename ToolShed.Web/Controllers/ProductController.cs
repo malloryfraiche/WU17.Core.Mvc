@@ -18,14 +18,25 @@ namespace ToolShed.Web.Controllers
             repo = productRepository;
         }
 
-        public IActionResult List(int page = 1)
+        public IActionResult List(string selectedCategory, int page = 1)
         {
-            var toSkip = (page - 1) * PageLimit;
-            var products = repo.Products.OrderBy(x => x.Id).Skip(toSkip).Take(PageLimit);
-            var paging = new PagingInfo { CurrentPage = page, ItemsPerPage = PageLimit, TotalItems = repo.Products.Count() };
-            var vm = new ProductListViewModel { Products = products, Pager = paging };
+            var ps = repo.Products.ToList();
 
-            return View(vm);
+            var toSkip = (page - 1) * PageLimit;
+            var products = repo.Products
+                .Where(p => selectedCategory == null || p.Category.Name.Equals(selectedCategory, StringComparison.InvariantCultureIgnoreCase))
+                .OrderBy(x => x.Id)
+                .Skip(toSkip)
+                .Take(PageLimit);
+
+            var paging = new PagingInfo { CurrentPage = page, ItemsPerPage = PageLimit, TotalItems = repo.Products.Count() };
+            var vm = new ProductListViewModel {
+                Products = products,
+                Pager = paging,
+                SelectedCategory = selectedCategory
+            };
+
+            return View("~/Views/Product/List.cshtml", vm);
         }
 
         public IActionResult Index()
