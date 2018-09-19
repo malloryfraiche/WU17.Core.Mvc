@@ -1,0 +1,6 @@
+[
+  {
+    "outputFile": "wwwroot/css/style.css",
+    "inputFile": "node_modules/bootstrap/scss/bootstrap.scss"
+  }
+]

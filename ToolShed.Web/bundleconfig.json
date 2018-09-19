@@ -1,20 +1,12 @@
 [
   {
-    "outputFileName": "wwwroot/css/site.min.css",
-    "inputFiles": [
-      "wwwroot/css/site.css"
-    ]
-  },
-  {
+    // Name of the file that has the Bootstrap js and jquery info.
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
       "node_modules/jquery/dist/jquery.min.js",
+      "node_modules/popper.js/dist/umd/popper.min.js",
       "node_modules/bootstrap/dist/js/bootstrap.min.js"
     ],
-    "minify": {
-      "enabled": true,
-      "renameLocals": false
-    },
     "sourceMap": false
   }
 ]

@@ -1,0 +1,16 @@
+﻿@model Product
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>@Model.Name</h2>
+                <p>@Model.Description</p>
+                <span class="label label-success price-label">@($"Pris: {Model.Price:C2}")</span>
+            </div>
+            <div class="col-md-8">
+                <img src="http://via.placeholder.com/150x150" class="pull-right" />
+            </div>
+        </div>
+    </div>
+</div>

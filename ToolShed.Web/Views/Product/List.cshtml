@@ -2,10 +2,16 @@
 
 @foreach (var p in Model.Products)
 {
-    <div>
-        <h2>@p.Name</h2>
-        <p>@p.Description</p>
-        <span>@($"Pris: {p.Price:C2}")</span>
-    </div>
+    <partial name="ProductBlockPartialView" model="p"/>
 }
-<div page-model="@Model.Pager" page-action="List"></div>
+
+<hr />
+
+<div page-model="@Model.Pager"
+    page-action="List" 
+    enable-page-classes="true"
+    page-class="btn"
+    page-class-normal="btn-default"
+    page-class-selected="btn-primary"
+    class="btn-group">
+</div>

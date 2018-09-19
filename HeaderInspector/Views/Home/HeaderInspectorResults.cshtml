@@ -10,24 +10,6 @@
 <partial name="FormPartialView" />
 
 
-
-
-
-
-<br /><br />
-@foreach (var item in ViewBag.TestList)
-{
-    <p>@item</p>
-}
-@* Why does it always print the last Response Header "Expire"???? *@
-<br /><br />
-<p>@ViewBag.ToPrint</p>
-
-
-
-
-
-
 <br /><br />
 <br /><br />
 <p>You have posted a request with Url: @Model.Url and the following excluded header: @Model.ExcludedHeaders</p>
@@ -55,3 +37,20 @@
 
 
 <br /><br />
+
+
+
+<br /><br />
+@foreach (var item in ViewBag.TestList)
+{
+    <p>@item</p>
+}
+@* Why does it always print the last Response Header "Expire"???? *@
+<br /><br />
+<p>@ViewBag.ToPrint</p>
+
+
+
+
+
+
