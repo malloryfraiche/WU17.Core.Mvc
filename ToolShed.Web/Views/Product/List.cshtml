@@ -2,21 +2,10 @@
 
 @foreach (var p in Model.Products)
 {
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>@p.Name</h2>
-                    <p>@p.Description</p>
-                    <span>@($"Pris: {p.Price:C2}")</span>
-                </div>
-                <div class="col-md-8">
-                    <img src="http://via.placeholder.com/150x150" class="pull-right" />
-                </div>
-            </div>
-        </div>
-    </div>
+    <partial name="ProductBlockPartialView" model="p"/>
 }
+
+<hr />
 
 <div page-model="@Model.Pager"
     page-action="List" 
